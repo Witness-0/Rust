@@ -18,4 +18,17 @@ impl Solution {
 
         count.iter().all(|&c| c==0) // we iterate over each element and all(|&c| == 0) checks if each element is zero.
     }
+
+    /*
+    ch is a char (Unicode scalar value, 4 bytes).
+    ch as u8 converts the character to its ASCII byte value (this works for 'a'..'z' but not for all Unicode characters).
+    b'a' is the byte literal for lowercase 'a' (value 97 in ASCII).
+    (ch as u8 - b'a') is the position of the letter in the alphabet (e.g., 'a' → 0, 'b' → 1, etc.).
+    The result of (ch as u8 - b'a') is still u8.
+
+    Vectors in Rust must be indexed by a usize, not a u8.
+    So u8 → usize casting is required.
+    */
+
+
 }
